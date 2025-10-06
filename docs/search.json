@@ -11,7 +11,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "This is a blog template for the ETC5523 Communicating with Data assessment at Monash University."
+    "text": "Hi, I’m Siddhi Jadhav and I’m studying Business Analytics at Monash University. Most days, you’ll find me somewhere between running R scripts, fixing the same R scripts and promising myself that next time, the code will run perfectly on the first try. It never does but that’s okay. I’ve learned that data analytics is equal parts logic, creativity and chaos and that’s exactly what makes it exciting.\nI spend most of my time working in R, using tools like ggplot2, dplyr and the tidyverse to make sense of messy datasets. There’s something oddly satisfying about turning raw, confusing data into visuals that actually tell a story. Every clean plot feels like a small win usually followed by coffee, because every good analyst knows caffeine counts as part of the workflow.\nOutside of analytics, I’m a big fan of tennis. I like to think of it as the perfect metaphor for what I do you serve, you miss, you adjust and then you try again until you find your rhythm. Whether it’s a rally on the court or debugging loops in R, patience and timing make all the difference.\nWhen I’m not coding or playing tennis, I’m probably exploring new coffee spots around Melbourne or pretending that lo-fi playlists actually help me focus. I love connecting with people who enjoy learning, sharing ideas, or just laughing about the endless adventure that is data analysis."
   },
   {
     "objectID": "posts/welcome/index.html",
