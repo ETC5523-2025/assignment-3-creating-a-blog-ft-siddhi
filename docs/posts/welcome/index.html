@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Emi Tanaka">
-<meta name="dcterms.date" content="2022-07-18">
+<meta name="author" content="Siddhi Jadhav">
+<meta name="dcterms.date" content="2025-10-06">
 
-<title>Welcome To My Blog Template – ETC5523 - Communicating with Data Assignment 3</title>
+<title>Did vaccination make hotel quarantine safe enough during Delta? – ETC5523 - Communicating with Data Assignment 3</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -68,12 +88,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -110,9 +132,11 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Welcome To My Blog Template</h1>
+      <h1 class="title">Did vaccination make hotel quarantine safe enough during Delta?</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">news</div>
+                <div class="quarto-category">COVID-19</div>
+                <div class="quarto-category">risk</div>
+                <div class="quarto-category">modelling</div>
               </div>
                   </div>
   </div>
@@ -123,14 +147,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Emi Tanaka </p>
+               <p>Siddhi Jadhav </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 18, 2022</p>
+        <p class="date">October 6, 2025</p>
       </div>
     </div>
     
@@ -141,7 +165,17 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#when-delta-changed-the-quarantine-equation" id="toc-when-delta-changed-the-quarantine-equation" class="nav-link active" data-scroll-target="#when-delta-changed-the-quarantine-equation">When Delta changed the quarantine equation</a></li>
+  <li><a href="#understanding-the-data" id="toc-understanding-the-data" class="nav-link" data-scroll-target="#understanding-the-data">Understanding the data</a></li>
+  <li><a href="#what-it-all-means" id="toc-what-it-all-means" class="nav-link" data-scroll-target="#what-it-all-means">What It All Means</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -149,12 +183,95 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="thumbnail.jpg" class="img-fluid"></p>
+<section id="when-delta-changed-the-quarantine-equation" class="level2">
+<h2 class="anchored" data-anchor-id="when-delta-changed-the-quarantine-equation">When Delta changed the quarantine equation</h2>
+<p>Remember when strict quarantine hotels were our strongest defence? For a while, that approach worked. Low tolerance quarantine systems were central to Australia’s COVID-19 control strategy, preventing imported cases from sparking community outbreaks. But then came the Delta variant: faster, stronger, and harder to contain.</p>
+<p>Delta’s higher transmissibility and reduced vaccine protection against infection meant that even a single breach could quickly escalate into an outbreak. This shift raised a critical question for policymakers: <strong>How much vaccine protection and population coverage are needed to maintain the same low level of risk achieved before Delta?</strong></p>
+<p>The study by Zachreson et al.&nbsp;(2021) explored this trade off through simulation models of transmission within and beyond quarantine facilities. In this post, we’ll unpack their key findings and what they mean for balancing vaccines, variants, and border control.</p>
+</section>
+<section id="understanding-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-the-data">Understanding the data</h2>
+<p>The analysis is based on modelling by Zachreson et al.&nbsp;(2021), who simulated how changes in variant transmissibility and vaccine performance affected the probability that a quarantine facility might release at least one infected person into the community. Their agent based model was designed around Australian quarantine conditions and compared outcomes for Alpha-like and Delta-like variants under different levels of vaccine efficacy and coverage.</p>
+<p>Put simply, the researchers wanted to know how likely a “breach” was under different vaccine and variant scenarios. The results showed a clear pattern: while vaccination lowers breach risk, Delta’s transmissibility raises the baseline so much that even strong coverage cannot fully cancel out the risk.</p>
+<p>To illustrate these relationships, <a href="#fig-breach-prob" class="quarto-xref">Figure&nbsp;1</a> below recreates the overall trend using simplified simulated data based on the study’s concepts. It shows how increasing both vaccine efficacy and population coverage reduces breach probability but with diminishing returns once coverage exceeds about 80%..</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-breach-prob" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-breach-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-breach-prob-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-breach-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Relationship between vaccine coverage and estimated quarantine breach probability under varying efficacy assumptions.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>As shown in <a href="#fig-breach-prob" class="quarto-xref">Figure&nbsp;1</a>, higher coverage and stronger vaccines reduce risk rapidly at first, but the benefits flatten at very high levels. This mirrors the study’s finding that while vaccination helps substantially, Delta’s transmission potential still leaves a small but persistent breach risk even at 90% efficacy.</p>
+<p><a href="#tbl-thresholds" class="quarto-xref">Table&nbsp;1</a> summarises the approximate vaccine coverage required to keep breach probability below 5% under different efficacy and variant scenarios. These numbers are simplified examples but align closely with the trends reported by Zachreson et al.&nbsp;(2021).</p>
+<div class="cell">
+<div id="tbl-thresholds" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-thresholds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Approximate vaccine coverage needed to maintain a breach probability below 5 % under different efficacy and variant scenarios.
+</figcaption>
+<div aria-describedby="tbl-thresholds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Variant</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Efficacy_60</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Efficacy_75</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Efficacy_90</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Alpha</td>
+<td style="text-align: center;">&gt; 80 %</td>
+<td style="text-align: center;">70 %</td>
+<td style="text-align: center;">55 %</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Delta</td>
+<td style="text-align: center;">Not achievable</td>
+<td style="text-align: center;">85 %</td>
+<td style="text-align: center;">75 %</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Omicron-like</td>
+<td style="text-align: center;">Not achievable</td>
+<td style="text-align: center;">&gt; 90 %</td>
+<td style="text-align: center;">85 %</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Together, <a href="#fig-breach-prob" class="quarto-xref">Figure&nbsp;1</a> and <a href="#tbl-thresholds" class="quarto-xref">Table&nbsp;1</a> highlight how variant transmissibility compounds risk. When efficacy drops or new variants spread more easily, the level of vaccination needed to maintain low breach probability increases sharply. In other words, vaccination is essential, but by itself, it isn’t enough to sustain pre-Delta safety levels.</p>
+</section>
+<section id="what-it-all-means" class="level2">
+<h2 class="anchored" data-anchor-id="what-it-all-means">What It All Means</h2>
+<p>The Delta variant fundamentally changed how low-tolerance quarantine systems perform. According to <span class="citation" data-cites="zachreson2021">Zachreson et al. (<a href="#ref-zachreson2021" role="doc-biblioref">2021</a>)</span>, vaccination substantially reduces breach risk, but cannot, on its own, recreate the safety margin that existed before Delta. As transmissibility increases, even small coverage gaps or moderate drops in efficacy can lead to disproportionately higher outbreak risks.</p>
+<p>This insight brings us back to the central question: How can we keep community risk low in a high-transmission world? The answer lies in layered protection combining high vaccine coverage and strong vaccine performance with other measures such as testing, ventilation, and shortened quarantine durations. These overlapping layers create a safety net that compensates when one measure falters.</p>
+<p>Ultimately, the research reminds us that good pandemic policy isn’t about chasing perfection. It’s about managing uncertainty. Vaccines are a cornerstone of that defence, but they work best as part of a broader system that anticipates new variants and adapts to changing risks.</p>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-zachreson2021" class="csl-entry" role="listitem">
+Zachreson, Cameron, Freya M. Shearer, David J. Price, Michael J. Lydeamore, Jodie McVernon, and James M. McCaw. 2021. <span>“COVID-19 in Low-Tolerance Border Quarantine Systems: Impact of the Delta Variant of SARS-CoV-2.”</span> <em>Science Advances</em> 7 (51): eabm0472. <a href="https://doi.org/10.1126/sciadv.abm0472">https://doi.org/10.1126/sciadv.abm0472</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

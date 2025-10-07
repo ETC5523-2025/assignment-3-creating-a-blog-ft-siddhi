@@ -55,6 +55,7 @@ html,body{
 
 /*  Headings */
 body{ counter-reset: h2counter; }
+main.content { counter-reset: h2counter; }
 h1,h2,h3{
   font-family:"Spectral", Georgia, serif;
   color:var(--ink);
@@ -175,3 +176,48 @@ body.about-justified h1,
 body.about-justified h2,
 body.about-justified h3 { text-align: left; }
 
+body.blog-post main { counter-reset: h2counter; }
+
+body.blog-post main h2 {
+  counter-increment: h2counter;
+  position: relative;
+  margin-top: 2.2rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--drift);
+}
+
+body.blog-post main h2::before {
+  content: counter(h2counter, decimal-leading-zero) " ";
+  position: absolute;
+  left: -0.6rem; top: -0.8rem;
+  font: 700 2.2rem/1 "Spectral", serif;
+  color: var(--bronze);
+  opacity: .65;
+}
+
+/* Disable numbering and decorative styles in the TOC sidebar */
+
+.toc h2, nav#TOC h2, .sidebar h2 {
+  counter-increment: none !important;
+  border-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.toc h2::before, nav#TOC h2::before, .sidebar h2::before {
+  content: none !important;
+}
+
+/* Make category chips visible */
+.quarto-categories { margin-top: .35rem; }
+.quarto-category {
+  display: inline-block;
+  background: #efe9e1;
+  border: 1px solid #d9cfc2;
+  color: var(--ink);
+  padding: .15rem .5rem;
+  margin-right: .35rem;
+  border-radius: 999px;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}

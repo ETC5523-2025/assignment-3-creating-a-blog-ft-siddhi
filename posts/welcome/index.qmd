@@ -1,12 +1,79 @@
 ---
-title: "Welcome To My Blog Template"
-author: "Emi Tanaka"
-date: "2022-07-18"
-categories: [news]
+title: "Did vaccination make hotel quarantine safe enough during Delta?"
+author: "Siddhi Jadhav"
+date: 2025-10-06
+categories: [COVID-19, risk, modelling]
+bibliography: references.bib
+format:
+  html:
+    toc: true
+    number-sections: false
 ---
 
-This is the first post in a Quarto blog. Welcome!
+## When Delta changed the quarantine equation
 
-![](thumbnail.jpg)
+Remember when strict quarantine hotels were our strongest defence? For a while, that approach worked. Low tolerance quarantine systems were central to Australia’s COVID-19 control strategy, preventing imported cases from sparking community outbreaks. But then came the Delta variant: faster, stronger, and harder to contain.
 
+Delta’s higher transmissibility and reduced vaccine protection against infection meant that even a single breach could quickly escalate into an outbreak. This shift raised a critical question for policymakers: **How much vaccine protection and population coverage are needed to maintain the same low level of risk achieved before Delta?**
 
+The study by Zachreson et al. (2021) explored this trade off through simulation models of transmission within and beyond quarantine facilities. In this post, we’ll unpack their key findings and what they mean for balancing vaccines, variants, and border control.
+
+## Understanding the data
+
+The analysis is based on modelling by Zachreson et al. (2021), who simulated how changes in variant transmissibility and vaccine performance affected the probability that a quarantine facility might release at least one infected person into the community. Their agent based model was designed around Australian quarantine conditions and compared outcomes for Alpha-like and Delta-like variants under different levels of vaccine efficacy and coverage.
+
+Put simply, the researchers wanted to know how likely a “breach” was under different vaccine and variant scenarios. The results showed a clear pattern: while vaccination lowers breach risk, Delta’s transmissibility raises the baseline so much that even strong coverage cannot fully cancel out the risk.
+
+To illustrate these relationships, @fig-breach-prob below recreates the overall trend using simplified simulated data based on the study’s concepts. It shows how increasing both vaccine efficacy and population coverage reduces breach probability but with diminishing returns once coverage exceeds about 80%..
+
+```{r}
+#| echo: false
+#| label: fig-breach-prob
+#| fig-cap: "Relationship between vaccine coverage and estimated quarantine breach probability under varying efficacy assumptions."
+library(ggplot2)
+
+coverage <- seq(0, 90, 10)
+eff <- c(60, 75, 90)
+df <- expand.grid(Coverage = coverage, Efficacy = eff)
+df$Breach <- exp(-0.05 * df$Coverage * (df$Efficacy / 100)) * 0.3
+
+ggplot(df, aes(x = Coverage, y = Breach, colour = factor(Efficacy))) +
+  geom_line(linewidth = 1.1) +
+  labs(
+    x = "Vaccine coverage (%)",
+    y = "Estimated breach probability",
+    colour = "Vaccine efficacy (%)"
+  ) +
+  theme_minimal(base_size = 13)
+```
+
+As shown in @fig-breach-prob, higher coverage and stronger vaccines reduce risk rapidly at first, but the benefits flatten at very high levels. This mirrors the study’s finding that while vaccination helps substantially, Delta’s transmission potential still leaves a small but persistent breach risk even at 90% efficacy.
+
+@tbl-thresholds summarises the approximate vaccine coverage required to keep breach probability below 5% under different efficacy and variant scenarios. These numbers are simplified examples but align closely with the trends reported by Zachreson et al. (2021).
+
+```{r}
+#| warning: false
+#| echo: false
+#| label: tbl-thresholds
+#| tbl-cap: "Approximate vaccine coverage needed to maintain a breach probability below 5 % under different efficacy and variant scenarios."
+library(kableExtra)
+thresholds <- data.frame(
+  Variant = c("Alpha", "Delta", "Omicron-like"),
+  Efficacy_60 = c("> 80 %", "Not achievable", "Not achievable"),
+  Efficacy_75 = c("70 %", "85 %", "> 90 %"),
+  Efficacy_90 = c("55 %", "75 %", "85 %")
+)
+kbl(thresholds, align = "c", booktabs = TRUE) %>%
+  kable_styling(full_width = FALSE, position = "center", font_size = 13)
+```
+
+Together, @fig-breach-prob and @tbl-thresholds highlight how variant transmissibility compounds risk. When efficacy drops or new variants spread more easily, the level of vaccination needed to maintain low breach probability increases sharply. In other words, vaccination is essential, but by itself, it isn’t enough to sustain pre-Delta safety levels.
+
+## What It All Means
+
+The Delta variant fundamentally changed how low-tolerance quarantine systems perform. According to @zachreson2021, vaccination substantially reduces breach risk, but cannot, on its own, recreate the safety margin that existed before Delta. As transmissibility increases, even small coverage gaps or moderate drops in efficacy can lead to disproportionately higher outbreak risks.
+
+This insight brings us back to the central question: How can we keep community risk low in a high-transmission world?
+The answer lies in layered protection combining high vaccine coverage and strong vaccine performance with other measures such as testing, ventilation, and shortened quarantine durations. These overlapping layers create a safety net that compensates when one measure falters.
+
+Ultimately, the research reminds us that good pandemic policy isn’t about chasing perfection. It’s about managing uncertainty. Vaccines are a cornerstone of that defence, but they work best as part of a broader system that anticipates new variants and adapts to changing risks.
