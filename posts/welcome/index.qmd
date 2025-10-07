@@ -69,7 +69,7 @@ kbl(thresholds, align = "c", booktabs = TRUE) %>%
 
 Together, @fig-breach-prob and @tbl-thresholds highlight how variant transmissibility compounds risk. When efficacy drops or new variants spread more easily, the level of vaccination needed to maintain low breach probability increases sharply. In other words, vaccination is essential, but by itself, it isn’t enough to sustain pre-Delta safety levels.
 
-## What It All Means
+## What it all means
 
 The Delta variant fundamentally changed how low-tolerance quarantine systems perform. According to @zachreson2021, vaccination substantially reduces breach risk, but cannot, on its own, recreate the safety margin that existed before Delta. As transmissibility increases, even small coverage gaps or moderate drops in efficacy can lead to disproportionately higher outbreak risks.
 
@@ -77,3 +77,5 @@ This insight brings us back to the central question: How can we keep community r
 The answer lies in layered protection combining high vaccine coverage and strong vaccine performance with other measures such as testing, ventilation, and shortened quarantine durations. These overlapping layers create a safety net that compensates when one measure falters.
 
 Ultimately, the research reminds us that good pandemic policy isn’t about chasing perfection. It’s about managing uncertainty. Vaccines are a cornerstone of that defence, but they work best as part of a broader system that anticipates new variants and adapts to changing risks.
+
+## Live site: [https://etc5523-2025.github.io/assignment-3-creating-a-blog-ft-siddhi/](https://etc5523-2025.github.io/assignment-3-creating-a-blog-ft-siddhi/)
