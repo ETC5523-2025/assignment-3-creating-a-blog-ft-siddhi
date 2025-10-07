@@ -78,4 +78,9 @@ The answer lies in layered protection combining high vaccine coverage and strong
 
 Ultimately, the research reminds us that good pandemic policy isn’t about chasing perfection. It’s about managing uncertainty. Vaccines are a cornerstone of that defence, but they work best as part of a broader system that anticipates new variants and adapts to changing risks.
 
-## Live site: [https://etc5523-2025.github.io/assignment-3-creating-a-blog-ft-siddhi/](https://etc5523-2025.github.io/assignment-3-creating-a-blog-ft-siddhi/)
+
+::: callout-note
+## Live site
+[https://etc5523-2025.github.io/assignment-3-creating-a-blog-ft-siddhi/](https://etc5523-2025.github.io/assignment-3-creating-a-blog-ft-siddhi/)
+:::
+
