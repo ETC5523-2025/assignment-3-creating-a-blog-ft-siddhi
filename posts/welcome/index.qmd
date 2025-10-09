@@ -13,12 +13,12 @@ format:
 ## When Delta changed the quarantine equation
 
 For much of 2020 and early 2021, hotel quarantine served as Australia’s front-line defence against imported COVID-19 cases. These low-tolerance systems worked well when the virus was less transmissible, keeping community risk minimal.  
-Then came the **Delta variant**, faster, strongerandharder to contain.  
+Then came the **Delta variant**, faster, stronger and harder to contain.  
 
 Delta’s higher transmissibility and partial vaccine escape meant that even a single missed infection could trigger an outbreak. This raised a policy question that became central to pandemic management:  
 **Could vaccination alone make hotel quarantine safe enough in the Delta era?**
 
-The study by **Zachreson et al. (2021)** explored this question through simulation models of quarantine transmission. They examined how vaccine efficacy, coverageandvariant transmissibility interact to influence the probability of a quarantine breach, meaning a case slipping undetected into the community.
+The study by **Zachreson et al. (2021)** explored this question through simulation models of quarantine transmission. They examined how vaccine efficacy, coverage and variant transmissibility interact to influence the probability of a quarantine breach, meaning a case slipping undetected into the community.
 
 
 
@@ -27,7 +27,7 @@ The study by **Zachreson et al. (2021)** explored this question through simulati
 
 Zachreson et al. (2021) built an agent-based model that reproduced the flow of travellers through testing and isolation under Australian quarantine conditions. It captured the points where infection could remain undetected and later seed community transmission.  
 
-As shown in **@fig-quarantine-model**, the model followed travellers through repeated testing, isolationanddischarge.  
+As shown in **@fig-quarantine-model**, the model followed travellers through repeated testing, isolation and discharge.  
 Even with multiple test rounds, **false negatives** sometimes allowed undetected infections to leave isolation, creating the "breach events" that the study set out to quantify.
 
 
@@ -57,11 +57,11 @@ library(kableExtra)
 table_data <- data.frame(
   "Vaccine efficacy (%)" = c(60, 75, 90),
   "Coverage needed (%)" = c("≈ 90", "≈ 70", "≈ 55"),
-  "t₅₀ (days)"          = c("≈ 20", "≈ 150", "> 1000")
+  "t50 (days)"          = c("≈ 20", "≈ 150", "> 1000")
 )
 
 kbl(table_data, booktabs = TRUE, align = "c", escape = FALSE,
-    col.names = c("Efficacy (%)","Coverage (%)","t₅₀ (days)")) %>%
+    col.names = c("Efficacy (%)","Coverage (%)","t50 (days)")) %>%
   kable_styling(full_width = FALSE, position = "center", font_size = 14) %>%
   row_spec(0, bold = TRUE, background = "#F4EFEA") %>%
   row_spec(1:3, background = "#FAF9F6")
