@@ -171,7 +171,7 @@ div.csl-indent {
    
   <ul>
   <li><a href="#when-delta-changed-the-quarantine-equation" id="toc-when-delta-changed-the-quarantine-equation" class="nav-link active" data-scroll-target="#when-delta-changed-the-quarantine-equation">When Delta changed the quarantine equation</a></li>
-  <li><a href="#understanding-the-data" id="toc-understanding-the-data" class="nav-link" data-scroll-target="#understanding-the-data">Understanding the data</a></li>
+  <li><a href="#analysing-the-risk" id="toc-analysing-the-risk" class="nav-link" data-scroll-target="#analysing-the-risk">Analysing the risk</a></li>
   <li><a href="#what-it-all-means" id="toc-what-it-all-means" class="nav-link" data-scroll-target="#what-it-all-means">What it all means</a></li>
   </ul>
 </nav>
@@ -185,66 +185,64 @@ div.csl-indent {
 
 <section id="when-delta-changed-the-quarantine-equation" class="level2">
 <h2 class="anchored" data-anchor-id="when-delta-changed-the-quarantine-equation">When Delta changed the quarantine equation</h2>
-<p>Remember when strict quarantine hotels were our strongest defence? For a while, that approach worked. Low tolerance quarantine systems were central to Australia’s COVID-19 control strategy, preventing imported cases from sparking community outbreaks. But then came the Delta variant: faster, stronger, and harder to contain.</p>
-<p>Delta’s higher transmissibility and reduced vaccine protection against infection meant that even a single breach could quickly escalate into an outbreak. This shift raised a critical question for policymakers: <strong>How much vaccine protection and population coverage are needed to maintain the same low level of risk achieved before Delta?</strong></p>
-<p>The study by Zachreson et al.&nbsp;(2021) explored this trade off through simulation models of transmission within and beyond quarantine facilities. In this post, we’ll unpack their key findings and what they mean for balancing vaccines, variants, and border control.</p>
+<p>For much of 2020 and early 2021, hotel quarantine served as Australia’s front-line defence against imported COVID-19 cases. These low-tolerance systems worked well when the virus was less transmissible, keeping community risk minimal.<br>
+Then came the <strong>Delta variant</strong>, faster, strongerandharder to contain.</p>
+<p>Delta’s higher transmissibility and partial vaccine escape meant that even a single missed infection could trigger an outbreak. This raised a policy question that became central to pandemic management:<br>
+<strong>Could vaccination alone make hotel quarantine safe enough in the Delta era?</strong></p>
+<p>The study by <strong>Zachreson et al.&nbsp;(2021)</strong> explored this question through simulation models of quarantine transmission. They examined how vaccine efficacy, coverageandvariant transmissibility interact to influence the probability of a quarantine breach, meaning a case slipping undetected into the community.</p>
 </section>
-<section id="understanding-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="understanding-the-data">Understanding the data</h2>
-<p>The analysis is based on modelling by Zachreson et al.&nbsp;(2021), who simulated how changes in variant transmissibility and vaccine performance affected the probability that a quarantine facility might release at least one infected person into the community. Their agent based model was designed around Australian quarantine conditions and compared outcomes for Alpha-like and Delta-like variants under different levels of vaccine efficacy and coverage.</p>
-<p>Put simply, the researchers wanted to know how likely a “breach” was under different vaccine and variant scenarios. The results showed a clear pattern: while vaccination lowers breach risk, Delta’s transmissibility raises the baseline so much that even strong coverage cannot fully cancel out the risk.</p>
-<p>To illustrate these relationships, <a href="#fig-breach-prob" class="quarto-xref">Figure&nbsp;1</a> below recreates the overall trend using simplified simulated data based on the study’s concepts. It shows how increasing both vaccine efficacy and population coverage reduces breach probability but with diminishing returns once coverage exceeds about 80%..</p>
+<section id="analysing-the-risk" class="level2">
+<h2 class="anchored" data-anchor-id="analysing-the-risk">Analysing the risk</h2>
+<p>Zachreson et al.&nbsp;(2021) built an agent-based model that reproduced the flow of travellers through testing and isolation under Australian quarantine conditions. It captured the points where infection could remain undetected and later seed community transmission.</p>
+<p>As shown in <strong><a href="#fig-quarantine-model" class="quarto-xref">Figure&nbsp;1</a></strong>, the model followed travellers through repeated testing, isolationanddischarge.<br>
+Even with multiple test rounds, <strong>false negatives</strong> sometimes allowed undetected infections to leave isolation, creating the “breach events” that the study set out to quantify.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-breach-prob" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-quarantine-model" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-breach-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-breach-prob-1.png" class="img-fluid figure-img" width="672">
+<div aria-describedby="fig-quarantine-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="thumbnail.png" class="img-fluid figure-img" width="503">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-breach-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Relationship between vaccine coverage and estimated quarantine breach probability under varying efficacy assumptions.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarantine-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: False negatives and undetected infections can result in breach events where infected individuals enter the community.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>As shown in <a href="#fig-breach-prob" class="quarto-xref">Figure&nbsp;1</a>, higher coverage and stronger vaccines reduce risk rapidly at first, but the benefits flatten at very high levels. This mirrors the study’s finding that while vaccination helps substantially, Delta’s transmission potential still leaves a small but persistent breach risk even at 90% efficacy.</p>
-<p><a href="#tbl-thresholds" class="quarto-xref">Table&nbsp;1</a> summarises the approximate vaccine coverage required to keep breach probability below 5% under different efficacy and variant scenarios. These numbers are simplified examples but align closely with the trends reported by Zachreson et al.&nbsp;(2021).</p>
+<p>Using this framework, the authors simulated how combinations of vaccine efficacy and coverage affected the chance of at least one infected traveller causing an outbreak. The results showed that vaccination greatly reduced risk but could not eliminate it entirely, particularly once transmissibility exceeded Delta levels.</p>
+<p>To summarise their findings, <a href="#tbl-outbreak-summary" class="quarto-xref">Table&nbsp;1</a> below compiles the approximate thresholds reported in the paper. It shows how higher vaccine efficacy and coverage dramatically increase the time before an outbreak becomes likely, but with diminishing returns beyond roughly 80 percent coverage.</p>
 <div class="cell">
-<div id="tbl-thresholds" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-outbreak-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-thresholds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Approximate vaccine coverage needed to maintain a breach probability below 5 % under different efficacy and variant scenarios.
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-outbreak-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Approximate relationship between vaccine efficacy, coverageandtime to 50 % outbreak probability.
 </figcaption>
-<div aria-describedby="tbl-thresholds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-outbreak-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th style="text-align: center;" data-quarto-table-cell-role="th">Variant</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Efficacy_60</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Efficacy_75</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Efficacy_90</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; background-color: rgba(244, 239, 234, 255) !important;">Efficacy (%)</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; background-color: rgba(244, 239, 234, 255) !important;">Coverage (%)</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; background-color: rgba(244, 239, 234, 255) !important;">t₅₀ (days)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">Alpha</td>
-<td style="text-align: center;">&gt; 80 %</td>
-<td style="text-align: center;">70 %</td>
-<td style="text-align: center;">55 %</td>
+<td style="text-align: center; background-color: rgba(250, 249, 246, 255) !important;">60</td>
+<td style="text-align: center; background-color: rgba(250, 249, 246, 255) !important;">≈ 90</td>
+<td style="text-align: center; background-color: rgba(250, 249, 246, 255) !important;">≈ 20</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">Delta</td>
-<td style="text-align: center;">Not achievable</td>
-<td style="text-align: center;">85 %</td>
-<td style="text-align: center;">75 %</td>
+<td style="text-align: center; background-color: rgba(250, 249, 246, 255) !important;">75</td>
+<td style="text-align: center; background-color: rgba(250, 249, 246, 255) !important;">≈ 70</td>
+<td style="text-align: center; background-color: rgba(250, 249, 246, 255) !important;">≈ 150</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">Omicron-like</td>
-<td style="text-align: center;">Not achievable</td>
-<td style="text-align: center;">&gt; 90 %</td>
-<td style="text-align: center;">85 %</td>
+<td style="text-align: center; background-color: rgba(250, 249, 246, 255) !important;">90</td>
+<td style="text-align: center; background-color: rgba(250, 249, 246, 255) !important;">≈ 55</td>
+<td style="text-align: center; background-color: rgba(250, 249, 246, 255) !important;">&gt; 1000</td>
 </tr>
 </tbody>
 </table>
@@ -255,13 +253,13 @@ Table&nbsp;1: Approximate vaccine coverage needed to maintain a breach probabili
 </figure>
 </div>
 </div>
-<p>Together, <a href="#fig-breach-prob" class="quarto-xref">Figure&nbsp;1</a> and <a href="#tbl-thresholds" class="quarto-xref">Table&nbsp;1</a> highlight how variant transmissibility compounds risk. When efficacy drops or new variants spread more easily, the level of vaccination needed to maintain low breach probability increases sharply. In other words, vaccination is essential, but by itself, it isn’t enough to sustain pre-Delta safety levels.</p>
+<p>Together, <a href="#fig-quarantine-model" class="quarto-xref">Figure&nbsp;1</a> and <a href="#tbl-outbreak-summary" class="quarto-xref">Table&nbsp;1</a> illustrate why Delta made quarantine so fragile. High vaccination coverage and potent vaccines reduce breach probability sharply at first, but residual risk persists even at 90 percent efficacy. This means vaccination, while vital, could not single-handedly restore the pre-Delta safety margin.</p>
 </section>
 <section id="what-it-all-means" class="level2">
 <h2 class="anchored" data-anchor-id="what-it-all-means">What it all means</h2>
-<p>The Delta variant fundamentally changed how low-tolerance quarantine systems perform. According to <span class="citation" data-cites="zachreson2021">Zachreson et al. (<a href="#ref-zachreson2021" role="doc-biblioref">2021</a>)</span>, vaccination substantially reduces breach risk, but cannot, on its own, recreate the safety margin that existed before Delta. As transmissibility increases, even small coverage gaps or moderate drops in efficacy can lead to disproportionately higher outbreak risks.</p>
-<p>This insight brings us back to the central question: How can we keep community risk low in a high-transmission world? The answer lies in layered protection combining high vaccine coverage and strong vaccine performance with other measures such as testing, ventilation, and shortened quarantine durations. These overlapping layers create a safety net that compensates when one measure falters.</p>
-<p>Ultimately, the research reminds us that good pandemic policy isn’t about chasing perfection. It’s about managing uncertainty. Vaccines are a cornerstone of that defence, but they work best as part of a broader system that anticipates new variants and adapts to changing risks.</p>
+<p>According to <span class="citation" data-cites="zachreson2021">Zachreson et al. (<a href="#ref-zachreson2021" role="doc-biblioref">2021</a>)</span>, vaccination substantially reduces the likelihood of quarantine breaches but cannot fully offset Delta’s transmissibility. As viral reproduction rates climb, even small coverage gaps or moderate declines in efficacy cause a disproportionate rise in outbreak risk.</p>
+<p>The implication is clear: quarantine safety depends on layers of protection, not a single measure. Combining vaccination with frequent testing, proper ventilation and shorter isolation periods creates a resilient system that tolerates uncertainty and limits risk spill-over.</p>
+<p>Ultimately, the research underscores a key lesson in public health modelling: Effective pandemic control is not about eliminating risk, but about managing it intelligently. Vaccines remain a cornerstone of defence, but they perform best when integrated with adaptive, evidence-based policy.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
