@@ -47,5 +47,12 @@
     "title": "Did vaccination make hotel quarantine safe enough during Delta?",
     "section": "Analysing the risk",
     "text": "Analysing the risk\nZachreson et al. (2021) built an agent-based model that reproduced the flow of travellers through testing and isolation under Australian quarantine conditions. It captured the points where infection could remain undetected and later seed community transmission.\nAs shown in Figure 1, the model followed travellers through repeated testing, isolation and discharge.\nEven with multiple test rounds, false negatives sometimes allowed undetected infections to leave isolation, creating the “breach events” that the study set out to quantify.\n\n\n\n\n\n\n\n\nFigure 1: False negatives and undetected infections can result in breach events where infected individuals enter the community.\n\n\n\n\n\nUsing this framework, the authors simulated how combinations of vaccine efficacy and coverage affected the chance of at least one infected traveller causing an outbreak. The results showed that vaccination greatly reduced risk but could not eliminate it entirely, particularly once transmissibility exceeded Delta levels.\nTo summarise their findings, Table 1 below compiles the approximate thresholds reported in the paper. It shows how higher vaccine efficacy and coverage dramatically increase the time before an outbreak becomes likely, but with diminishing returns beyond roughly 80 percent coverage.\n\n\n\n\nTable 1: Approximate relationship between vaccine efficacy, coverageandtime to 50 % outbreak probability.\n\n\n\n\n\n\nEfficacy (%)\nCoverage (%)\nt50 (days)\n\n\n\n\n60\n≈ 90\n≈ 20\n\n\n75\n≈ 70\n≈ 150\n\n\n90\n≈ 55\n&gt; 1000\n\n\n\n\n\n\n\n\n\n\nTogether, Figure 1 and Table 1 illustrate why Delta made quarantine so fragile. High vaccination coverage and potent vaccines reduce breach probability sharply at first, but residual risk persists even at 90 percent efficacy. This means vaccination, while vital, could not single-handedly restore the pre-Delta safety margin."
+  },
+  {
+    "objectID": "posts/welcome/index.html#ai-acknowlegment",
+    "href": "posts/welcome/index.html#ai-acknowlegment",
+    "title": "Did vaccination make hotel quarantine safe enough during Delta?",
+    "section": "AI Acknowlegment",
+    "text": "AI Acknowlegment\nhttps://chatgpt.com/share/68e92f2a-9828-8005-8df8-ebc5cfbad3e3"
   }
 ]
